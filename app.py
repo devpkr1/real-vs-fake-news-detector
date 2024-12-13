@@ -5,16 +5,13 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# Ensure necessary NLTK resources are downloaded
-def download_nltk_resources():
-    resources = ["stopwords", "punkt"]
-    for resource in resources:
-        try:
-            nltk.data.find(f"corpora/{resource}" if resource == "stopwords" else f"tokenizers/{resource}")
-        except LookupError:
-            nltk.download(resource)
-
-download_nltk_resources()
+# Ensure necessary NLTK resources are downloaded dynamically
+nltk_resources = ["stopwords", "punkt"]
+for resource in nltk_resources:
+    try:
+        nltk.data.find(f"tokenizers/{resource}" if resource == "punkt" else f"corpora/{resource}")
+    except LookupError:
+        nltk.download(resource)
 
 # Load the pre-trained model and vectorizer
 model_path = "random_forest_model.pkl"  # Update with your model file name
