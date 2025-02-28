@@ -2,12 +2,17 @@ import streamlit as st
 import pickle
 import re
 import nltk
+
+# Download necessary NLTK resources
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 # Load the pre-trained model and vectorizer
-model_path = "random_forest_model.pkl"  # Update with your model file name
-vectorizer_path = "vectorizer.pkl"  # Update with your vectorizer file name
+model_path = "random_forest_model.pkl"  
+vectorizer_path = "vectorizer.pkl"  
 
 with open(model_path, "rb") as model_file:
     model = pickle.load(model_file)
