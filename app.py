@@ -26,7 +26,7 @@ def preprocess_text(news):
     # Convert to lowercase
     news = news.lower()
     # Tokenize and lemmatize
-    tokens = nltk.word_tokenize(news)
+    tokens = news.split()
     processed_tokens = [lemmatizer.lemmatize(word) for word in tokens if word not in stop_words]
     return ' '.join(processed_tokens)
 
