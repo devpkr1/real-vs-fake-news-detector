@@ -75,6 +75,9 @@ The model was trained using a labeled dataset containing real and fake news arti
 
 Details of the training process and performance metrics can be found in the `real vs fake news analysis.ipynb`.
 
+## Live App Demo
+**Demo App:-** [Click Here](https://pkr1234-real-news-vs-fake-news-detector.hf.space)
+
 ## License
 
 This project is licensed under the MIT License.
